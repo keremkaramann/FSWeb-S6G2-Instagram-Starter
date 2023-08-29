@@ -8,26 +8,20 @@ import {
   faCompass,
 } from "@fortawesome/free-regular-svg-icons";
 import "./AramaCubugu.css";
-import { useState } from "react";
 
-const AramaCubugu = ({ gonderiler }) => {
-  /*  const [search, setSearch] = useState("");
-
-  const filtered = gonderiler.filter((item) =>
-    item.toLowerCase().includes(search.toLowerCase())
-  );
-
-  const searchItems = (e) => {
-    setSearch(e.target.value);
-  }; */
-
+const AramaCubugu = ({ arama, searchInput }) => {
   return (
     <div className="search-bar-wrapper">
       <div className="social">
         <FontAwesomeIcon icon={faInstagram} />
       </div>
       <form className="search-form">
-        <input type="text" placeholder="Arama" />
+        <input
+          type="text"
+          placeholder="Arama"
+          value={arama}
+          onChange={searchInput}
+        />
       </form>
       <div className="social-wrapper">
         <div className="social">
@@ -40,11 +34,6 @@ const AramaCubugu = ({ gonderiler }) => {
           <FontAwesomeIcon icon={faCircle} />
         </div>
       </div>
-      {/*  <div className="filtered-results">
-        {filtered.map((item, index) => (
-          <p key={index}>{item}</p>
-        ))}
-      </div> */}
     </div>
   );
 };
